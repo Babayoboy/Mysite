@@ -380,6 +380,17 @@ ul {
         margin: 0 auto 2rem;
     }
 
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .btn-secondary {
+        margin-left: 0;
+    }
+
     /* Globe - Move to bottom/background for mobile */
     #globe-container {
         left: 50%;
@@ -414,5 +425,3 @@ ul {
         flex-direction: column;
     }
 }
-
-```
