@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="globe-container"></div>
+    <div class="noise-overlay"></div>
+
+    <header class="main-header">
+        <nav>
+            <div class="logo">Joshi</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 class="fade-in-up">Ansh<br><span class="outline-text">Joshi</span></h1>
+                <p class="subtitle fade-in-up delay-1">Student BCA</p>
+                <div class="hero-actions fade-in-up delay-2">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="#experience" class="btn btn-secondary">View Work</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>01. About Me</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="about-content">
+                    <p>I build accessible, pixel-perfect, and performant web experiences. I possess a strong eye for
+                        design and a passion for clean code. Currently focusing on building accessible, human-centered
+                        products.</p>
+                    <br>
+                    <p>
+                        I love to build things that are both functional and visually appealing. I am a quick learner and
+                        enjoy taking on new challenges. I am also a team player and enjoy working with others to create
+                        something great.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>02. Experience</h2>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>03. Skills</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <p>HTML5, CSS3, JavaScript (ES6+)</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <p>Python, Mysql</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools</h3>
+                        <p>Git, Docker</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>04. Contact</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="contact-content">
+                    <p class="large-text">Let's build something amazing together.</p>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <a href="mailto:joshiansh70@gmail.com" class="email-link">joshiansh70@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/Babayoboy" class="email-link">Babayoboy</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/ansh-joshi-994b81367/" class="email-link">Ansh
+                                Joshi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Ansh Joshi. Built in Monochrome.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="globe.js"></script>
+    <script>
+        // Simple intersection observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section, .job-item').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
