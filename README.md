@@ -2,6 +2,10 @@
 
 A modern, interactive portfolio website showcasing skills, experience, and projects with a stunning 3D globe background visualization.
 
+## � Live Demo
+
+**[View the live site here](https://babayoboy.github.io/Mysite/)**
+
 ## 🌍 Features
 
 - **Interactive 3D Globe** - Dynamic rotating Earth globe using Three.js
