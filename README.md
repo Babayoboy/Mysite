@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website showcasing skills, experience, and projects with a stunning 3D globe background visualization.
 
-## � Live Demo
+## 💻 Live Demo
 
 **[View the live site here](https://babayoboy.github.io/Mysite/)**
 
