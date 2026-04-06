@@ -2,7 +2,10 @@
     --bg-color: #050505;
     --text-primary: #f2f2f2;
     --text-secondary: #888888;
-    --accent: #ffffff;
+    --accent: #6E1A37;
+    --accent-secondary: #a70303;
+    --accent-danger: #250707;
+    --accent-dark: #003049;
     --border-color: #222222;
     --font-main: 'Inter', sans-serif;
     --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -91,13 +94,18 @@ ul {
     background: rgba(5, 5, 5, 0.8);
     backdrop-filter: blur(10px);
     z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, var(--accent) 0%, var(--accent-secondary) 100%) 1;
 }
 
 .logo {
     font-weight: 800;
     font-size: 1.5rem;
     letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-links {
@@ -108,10 +116,27 @@ ul {
 .nav-links a {
     font-size: 0.9rem;
     color: var(--text-secondary);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--accent);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
@@ -122,7 +147,8 @@ ul {
     padding: 0 10%;
     /* More open padding */
     position: relative;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, var(--accent) 0%, var(--accent-secondary) 100%) 1;
 }
 
 .hero-content h1 {
@@ -136,19 +162,20 @@ ul {
 }
 
 .outline-text {
-    -webkit-text-stroke: 2px var(--text-primary);
+    -webkit-text-stroke: 2px var(--accent-secondary);
     /* Outline effect */
     color: transparent;
     transition: var(--transition);
 }
 
 .hero-content h1:hover .outline-text {
-    color: var(--text-primary);
+    -webkit-text-stroke: 2px var(--accent);
+    color: var(--accent);
 }
 
 .subtitle {
     font-size: 1.5rem;
-    color: var(--text-secondary);
+    color: var(--accent-secondary);
     margin-bottom: 3rem;
     max-width: 500px;
 }
@@ -164,24 +191,27 @@ ul {
 }
 
 .btn-primary {
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
     color: var(--bg-color);
+    border-color: transparent;
 }
 
 .btn-primary:hover {
     background: transparent;
     color: var(--accent);
+    border-color: var(--accent);
 }
 
 .btn-secondary {
     margin-left: 1rem;
-    border-color: var(--text-secondary);
-    color: var(--text-secondary);
+    border-color: var(--accent-secondary);
+    color: var(--accent-secondary);
 }
 
 .btn-secondary:hover {
     border-color: var(--accent);
     color: var(--accent);
+    background: rgba(252, 191, 73, 0.1);
 }
 
 /* Section Headers */
@@ -195,11 +225,15 @@ ul {
     font-size: 2rem;
     font-weight: 600;
     margin-right: 2rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .section-header .line {
-    height: 1px;
-    background: var(--border-color);
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-secondary) 50%, var(--accent-danger) 100%);
     flex-grow: 1;
 }
 
@@ -209,11 +243,28 @@ ul {
     border: 1px solid var(--border-color);
     margin-bottom: 2rem;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.job-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    width: 0;
+    transition: width 0.3s ease;
 }
 
 .job-item:hover {
-    border-color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.02);
+    border-color: var(--accent-secondary);
+    background: rgba(247, 127, 0, 0.05);
+}
+
+.job-item:hover::before {
+    width: 100%;
 }
 
 .job-header {
@@ -227,16 +278,17 @@ ul {
 .job-header h3 {
     font-size: 1.4rem;
     margin-right: 1rem;
+    color: var(--accent);
 }
 
 .company {
-    color: var(--text-secondary);
+    color: var(--accent-secondary);
     margin-right: auto;
 }
 
 .date {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--accent-danger);
 }
 
 .job-details li {
@@ -263,15 +315,51 @@ ul {
 .category {
     border: 1px solid var(--border-color);
     padding: 2rem;
+    transition: var(--transition);
+    position: relative;
 }
 
-.category h3 {
+.category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.category:hover {
+    border-color: var(--accent-secondary);
+    background: rgba(247, 127, 0, 0.05);
+}
+
+.category:hover::before {
+    transform: scaleX(1);
+}
+
+#skills h3 {
     margin-bottom: 1rem;
     font-size: 1.1rem;
+    color: var(--accent);
 }
 
 .category p {
     color: var(--text-secondary);
+}
+
+#projects h3{
+    font-size: 1.2rem;   
+    padding-bottom: 0.2rem;
+    transition: var(--transition);
+    color: var(--text-secondary);
+}
+
+#projects h3:hover{
+    color: var(--accent);
+    border-color: var(--accent-secondary);
 }
 
 /* Contact */
@@ -285,6 +373,10 @@ ul {
     font-weight: 800;
     margin-bottom: 4rem;
     letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 50%, var(--accent-danger) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .contact-grid {
@@ -298,19 +390,20 @@ ul {
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--text-secondary);
+    color: var(--accent-secondary);
     margin-bottom: 0.5rem;
 }
 
 .email-link {
     font-size: 1.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(252, 191, 73, 0.2);
     padding-bottom: 0.2rem;
+    transition: var(--transition);
 }
 
 .email-link:hover {
     color: var(--accent);
-    border-color: var(--accent);
+    border-color: var(--accent-secondary);
 }
 
 /* Footer */
@@ -318,7 +411,8 @@ ul {
     text-align: center;
     padding: 3rem;
     color: var(--text-secondary);
-    border-top: 1px solid var(--border-color);
+    border-top: 2px solid;
+    border-image: linear-gradient(90deg, var(--accent-danger) 0%, var(--accent-secondary) 100%) 1;
     font-size: 0.8rem;
 }
 
