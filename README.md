@@ -1,6 +1,6 @@
-# Portfolio | Ansh Joshi
+# Data Analysis Portfolio | Ansh Joshi
 
-A modern, interactive portfolio website showcasing skills, experience, and projects with a stunning 3D globe background visualization.
+A modern portfolio website showcasing data analysis skills, experience, and analysis projects with an elegant dark theme.
 
 ## 💻 Live Demo
 
@@ -8,12 +8,12 @@ A modern, interactive portfolio website showcasing skills, experience, and proje
 
 ## 🌍 Features
 
-- **Interactive 3D Globe** - Dynamic rotating Earth globe using Three.js
-- **Modern Dark Theme** - Sleek dark UI with smooth animations
+- **Data Analysis Focus** - Highlights PostgreSQL, Python, pandas, NumPy, Matplotlib, Power BI, and Excel
+- **Modern Dark Theme** - Sleek UI with smooth scroll animations
 - **Responsive Design** - Mobile-friendly layout
-- **Smooth Animations** - Fade-in and scroll animations for engaging UX
-- **Professional Layout** - Clean sections for About, Experience, Skills, and Projects
-- **Navigation** - Fixed header with easy navigation to all sections
+- **Experience & Projects** - Data analytics projects and freelance/academic experience
+- **Navigation** - Fixed header for easy access to sections
+- **Data Workflow** - Shows analysis workflows from SQL and Python to dashboard storytelling
 
 ## 📂 Project Structure
 
